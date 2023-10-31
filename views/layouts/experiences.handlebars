@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="h-full bg-green-50" lang="en">
+
+<head>
+  <!-- Meta tags and title for the web page -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | TransBit Tech Blog 2022</title>
+
+  <!-- External script for Tailwind CSS (Ensure the URL is correct) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Favicon for the webpage -->
+  <link rel="icon" type="image/x-icon" href="/public/images/trailbuddy-logo.png">
+  
+  <!-- External stylesheet (Ensure the href is correct) -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="min-h-full bg-green-50">
+  <!-- Navigation bar -->
+  <nav class="bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <!-- TrailBuddy Logo (Replace src and alt with actual logo information) -->
+            <img class="h-8 w-8" src="/public/images/trailbuddy-logo.png" alt="TrailBuddy Logo">
+          </div>
+          <div class="hidden md:block">
+            <!-- Navigation menu for larger screens -->
+            <div class="ml-10 flex items-baseline space-x-4">
+              <!-- Navigation links -->
+              <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+              <a href="/hikingTips" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Hiking Tips</a>
+              <a href="/trails" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Trails</a>
+              <a href="/experiences" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Experiences</a>
+              <a href="#" class="logout-link bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Logout</a>
+            </div>
+          </div>
+        </div>
+        <div class="-mr-2 flex md:hidden">
+          <!-- Mobile menu button -->
+          <button id="togglemebutton" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="resultnav" @click="open = !open" aria-expanded="false" x-bind:aria-expanded="open.toString()">
+            <span class="sr-only">Open Main Menu</span>
+            <!-- Mobile menu button icons -->
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu (hidden) -->
+    <div class="hidden md:hidden" id="resultnav">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <!-- Mobile navigation links -->
+        <a href="/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Home</a>
+        <a href="/hikingTips" class="text-gray-300 hover-bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Hiking Tips</a>
+        <a href="/trails" class="text-gray-300 hover-bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Trails</a>
+        <a href="/experiences" class="text-gray-300 hover-bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Experiences</a>
+        <a href="/experiences/new" class="text-gray-300 hover-bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Create Post</a>
+        <a href="/login" class="logout-link text-gray-300 hover-bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header section with a background gradient -->
+  <header class="bg-gradient-to-r from-green-800 via-green-400 to-green-200">
+    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+      <!-- Website title (modify text as needed) -->
+      <h1 class="text-3xl font-bold text-white">TrailBuddy 2023</h1>
+    </div>
+  </header>
+
+  <!-- Main content section -->
+  <main class="col-auto">
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <!-- The content of your page (replace with dynamic content as needed) -->
+      {{{body}}}
+    </div>
+  </main>
+
+  <!-- Footer section -->
+  <footer id="footer" class="bg-gray-800 text-center lg:text-left">
+    <div class="text-green-50 text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+      <!-- Copyright notice and link (modify as needed) -->
+      © 2023 Copyright:
+      <a class="text-green-600" href="#">TrailBuddy 2023</a>
+    </div>
+  </footer>
+</body>
+</html>
+
+<!-- Scripts to include (modify src attributes as needed) -->
+<script src="/js/logout.js"></script>
+<script src="/js/passive.js"></script>
