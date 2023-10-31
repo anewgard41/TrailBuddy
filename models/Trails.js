@@ -1,5 +1,7 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const { fetchTrails } = require('./trailService'); 
+
 
 class Trails extends Model {}
 
@@ -23,5 +25,21 @@ Trails.init(
         sequelize
     }
 );
+
+Trails.populateFromAPI = async () => {
+    try {
+      const trailData = await fetchTrails();
+      for (const trail of trailData.results) {
+        await Trails.create({
+          trail_name: trail.name,
+          trail_location: trail.segment,
+          trail_length: trail.length,
+        });
+      }
+    } catch (error) {
+      console.error('Error populating Trails from API:', error);
+      throw error;
+    }
+  };
 
 module.exports = Trails;
