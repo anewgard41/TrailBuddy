@@ -17,7 +17,7 @@ Trails.init(
             allowNull: false
         },
         trail_length: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DECIMAL(10, 2),
             allowNull: false
         },  
     },
