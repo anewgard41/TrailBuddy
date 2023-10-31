@@ -1,23 +1,32 @@
-const express = require('express');
-const axios = require('axios');
-const app = express();
-const port = 3001; 
+const User = require('./Users.js');
+const Post = require('./Post.js');
+const Comment = require('./Comment.js');
+const Trails = require('./Trails.js');
 
-app.use(express.json());
-
-app.get('/trails', async (req, res) => {
-  try {
-    const response = await axios.get(
-      'https://data.townofcary.org/api/explore/v2.1/catalog/datasets/greenway-trails/records?limit=20&refine=status%3A%22Existing%22'
-    );
-
-    res.json(response.data);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Failed to fetch trail data' });
-  }
+Post.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+Post.hasMany(Comment, {
+    foreignKey: 'post_id',
+    onDelete: 'CASCADE'
 });
+
+Post.belongsTo(Trails, {
+    foreignKey: 'trail_id',
+    onDelete: 'CASCADE'
+});
+
+Trails.hasMany(Post, {
+    foreignKey: 'trail_id',
+    onDelete: 'CASCADE'
+});
+
+Comment.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+module.exports = { User, Post, Comment, Trails };
+
