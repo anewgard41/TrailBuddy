@@ -8,6 +8,8 @@
 
   <!-- External script and favicon links -->
   <script src="http://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
   <link rel="icon" type="image/x-icon" href="/public/images/trailbuddy-logo.png">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -80,10 +82,30 @@
     <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
       <h1 class="text-3xl font-bold text-white">TrailBuddy 2023</h1>
     </div>
+        <!-- Search Section -->
+    <section class="my-8">
+      <div class="max-w-7xl mx-auto">
+        <input type="text" id="trailSearchInput" placeholder="Search for a trail..." class="p-2 border rounded-md w-full max-w-lg">
+        <button id="searchTrailsButton" class="mt-2 bg-green-600 text-white p-2 rounded-md">Search</button>
+      </div>
+    </section>
+
   </header>
   <!-- Main content area -->
   <main class="col-auto">
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <!-- Search results template -->
+      <script id="trails-template" type="text/x-handlebars-template">
+          <ul>
+              {{#each trails}}
+              <li>{{trail_name}} - {{trail_location}}</li>
+              {{/each}}
+          </ul>
+      </script>
+
+      <!-- Place to display search results -->
+      <div id="searchResults"></div>
+
       {{{body}}} <!-- This is where dynamic content is inserted -->
     </div>
   </main>
@@ -97,6 +119,7 @@
   </div>
 </footer>
 <!-- Closing HTML tag -->
+<script src="/js/trailSearch.js"></script>
 </html>
 
 {{#if logged_in}}

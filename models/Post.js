@@ -7,6 +7,7 @@ class Post extends Model {}
 Post.init(
     {
         title: DataTypes.STRING,
+        dateCreated: DataTypes.DATE,
         body: DataTypes.TEXT
     },
     {
