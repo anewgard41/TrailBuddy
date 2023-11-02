@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require("../models");
-const withAuth = require('../utils/auth');
+const withAuth = require('../utilities/authenticate.js');
 
 // Get all posts or experiences for the logged in user with associated comments. 
 router.get('/', withAuth, async (req, res) => {
@@ -67,4 +67,4 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     }
 });
 
-module.export = router;
+module.exports = router;
