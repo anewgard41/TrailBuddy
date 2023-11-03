@@ -13,6 +13,3 @@ router.use("/hikingTips", hikingTipsRoutes);
 router.use("/trails", trailsRoutes);
 
 module.exports = router;
-
-
-

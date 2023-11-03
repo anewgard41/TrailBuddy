@@ -40,12 +40,12 @@ User.init (
         hooks: {
             // set up beforeCreate hook functionality. Using bycrpt to hash the password before it is stored in the database upon first creation. 
             async beforeCreate(newUserData) {
-                newUserData.password = await bycrpt.hash(newUserData.password, 10);
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
                 return newUserData;
             },
             // set up beforeUpdate hook functionality. Functions similar to beforeCreate, but is used to hash the password when a user updates their password.
             async beforeUpdate(updatedUserData) {
-                updatedUserData.password = await bycrpt.hash(updatedUserData.password, 10);
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
                 return updatedUserData;
             }
         },
