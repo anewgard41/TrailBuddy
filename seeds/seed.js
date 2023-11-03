@@ -9,6 +9,7 @@ const seedDatabase = async () => {
     { username: 'funnyUser1', password: 'hilariousPassword1' },
     { username: 'comedyFan88', password: 'laughOutLoud123' },
     { username: 'jokester42', password: 'funnyBone567' },
+    { username: 'testing', password: 'test123'}
   ]);
 
   // Seed Trails

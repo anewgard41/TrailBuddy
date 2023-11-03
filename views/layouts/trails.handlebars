@@ -6,11 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | TrailBuddy 2023</title>
 
-  <!-- External script and favicon links -->
+  <!-- External script and links -->
   <script src="http://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-
-  <link rel="icon" type="image/x-icon" href="/public/images/trailbuddy-logo.png">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="min-h-full bg-green-50">
@@ -23,9 +21,7 @@
         <!-- Logo and menu for larger screens -->
         <div class="flex items-center">
           <!-- Logo -->
-          <div class="flex-shrink-0">
-            <img class="h-8 w-8" src="/public/images/trailbuddy-logo.png" alt="TrailBuddy Logo">
-          </div>
+          <img src="/public/images/trailbuddy-logo.png" alt="TrailBuddy Logo">
           <!-- Menu items for larger screens -->
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
@@ -83,10 +79,10 @@
       <h1 class="text-3xl font-bold text-white">TrailBuddy 2023</h1>
     </div>
         <!-- Search Section -->
-    <section class="my-8">
-      <div class="max-w-7xl mx-auto">
+    <section class="my-2">
+      <div class="max-w-7x1 mx-1 items-center p-2">
         <input type="text" id="trailSearchInput" placeholder="Search for a trail..." class="p-2 border rounded-md w-full max-w-lg">
-        <button id="searchTrailsButton" class="mt-2 bg-green-600 text-white p-2 rounded-md">Search</button>
+        <button id="searchTrailsButton" class="mt-2 bg-blue-600 text-white p-2 rounded-md">Search</button>
       </div>
     </section>
 
