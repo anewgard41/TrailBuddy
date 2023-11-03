@@ -1,0 +1,1287 @@
+/* Reset styles */
+html {
+  line-height: 1.15; /* Set the default line height for text */
+  -webkit-text-size-adjust: 100%; /* Adjust text size for webkit browsers */
+}
+
+body {
+  margin: 0; /* Remove default margin from the body element */
+}
+
+main {
+  display: block; /* Set the main element to be a block-level element */
+}
+
+/* Font and Text Styles */
+h1 {
+  font-size: 2em; /* Set the font size for h1 elements */
+  margin: 0.67em 0; /* Set margin for h1 elements */
+}
+
+hr {
+  box-sizing: content-box; /* Set box-sizing for horizontal rule elements */
+  height: 0; /* Set height to 0, effectively hiding the horizontal rule */
+  overflow: visible; /* Allow any overflow content to be visible */
+}
+
+pre {
+  font-family: monospace, monospace; /* Set font family for preformatted text */
+  font-size: 1em; /* Set font size for preformatted text */
+}
+
+a {
+  background-color: transparent; /* Set transparent background color for anchor links */
+}
+
+abbr[title] {
+  border-bottom: none; /* Remove the default underline on abbreviation elements */
+  text-decoration: underline; /* Add underline decoration to abbreviations */
+  text-decoration: underline dotted; /* Add a dotted underline to abbreviations */
+}
+
+b,
+strong {
+  font-weight: bolder; /* Set font weight for bold and strong elements */
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* Set font family for code-like elements */
+  font-size: 1em; /* Set font size for code-like elements */
+}
+
+small {
+  font-size: 80%; /* Reduce font size for small text */
+}
+
+sub,
+sup {
+  font-size: 75%; /* Reduce font size for subscript and superscript */
+  line-height: 0; /* Set line-height to 0 */
+  position: relative; /* Enable relative positioning for sub and sup elements */
+  vertical-align: baseline; /* Vertically align sub and sup elements to the baseline */
+}
+
+sub {
+  bottom: -0.25em; /* Adjust the positioning of subscript elements */
+}
+
+sup {
+  top: -0.5em; /* Adjust the positioning of superscript elements */
+}
+
+img {
+  border-style: none; /* Remove the border style from images */
+}
+
+/* Button Styles */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* Inherit the font family for form elements */
+  font-size: 100%; /* Reset the font size to its default value */
+  line-height: 1.15; /* Set the line height for form elements */
+  margin: 0; /* Reset margin for form elements */
+}
+
+button,
+input {
+  overflow: visible; /* Allow overflow content to be visible for buttons and inputs */
+}
+
+button,
+select {
+  text-transform: none; /* Reset text transformation for buttons and selects */
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button; /* Set the appearance to "button" for certain elements in Webkit browsers */
+}
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  border-style: none; /* Remove the border style from focus inner elements in Mozilla Firefox */
+  padding: 0; /* Reset padding for focus inner elements */
+}
+
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+  outline: 1px dotted ButtonText; /* Define the focus outline style for Mozilla Firefox */
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em; /* Set padding for fieldset elements */
+}
+
+legend {
+  box-sizing: border-box; /* Set the box-sizing for legends */
+  color: inherit; /* Inherit the text color for legends */
+  display: table; /* Set display to "table" for legends */
+  max-width: 100%; /* Limit the maximum width to 100% for legends */
+  padding: 0; /* Reset padding for legends */
+  white-space: normal; /* Allow normal white-space for legends */
+}
+
+progress {
+  vertical-align: baseline; /* Set vertical alignment for progress elements */
+}
+
+textarea {
+  overflow: auto; /* Enable scrolling for textareas when content overflows */
+}
+
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box; /* Set the box-sizing for checkboxes and radio buttons */
+  padding: 0; /* Reset padding for checkboxes and radio buttons */
+}
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto; /* Set the height to auto for the inner and outer spin buttons on number inputs */
+}
+
+[type='search'] {
+  -webkit-appearance: textfield; /* Set appearance to "textfield" for search inputs in Webkit browsers */
+  outline-offset: -2px; /* Set outline offset for search inputs */
+}
+
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none; /* Remove the default appearance of search input decorations in Webkit browsers */
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* Set appearance to "button" for file upload buttons in Webkit browsers */
+  font: inherit; /* Inherit the font for file upload buttons */
+}
+
+details {
+  display: block; /* Set display to "block" for details elements */
+}
+
+summary {
+  display: list-item; /* Set display to "list-item" for summary elements */
+}
+
+template {
+  display: none; /* Hide the template element */
+}
+
+[hidden] {
+  display: none; /* Hide elements with the hidden attribute */
+}
+/* Apply box-sizing to all elements, including before and after pseudo-elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Set minimum height for html and body to 100% of the viewport height */
+html, body {
+  min-height: 100%;
+}
+
+/* General body styles */
+body {
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; /* Define font family */
+  font-size: 16px; /* Set base font size */
+  color: #1a1a1a; /* Set text color */
+}
+
+/* Heading styles (h1 to h6) */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5rem; /* Adjust margin */
+  line-height: 1.25; /* Set line-height */
+}
+
+h1 {
+  font-size: 2.25rem; /* Set font size for h1 */
+}
+
+h2 {
+  font-size: 2rem; /* Set font size for h2 */
+}
+
+h3 {
+  font-size: 1.75rem; /* Set font size for h3 */
+}
+
+h4 {
+  font-size: 1.5rem; /* Set font size for h4 */
+}
+
+h5 {
+  font-size: 1.25rem; /* Set font size for h5 */
+}
+
+h6 {
+  font-size: 1rem; /* Set font size for h6 */
+}
+
+/* Paragraph styles */
+p {
+  font-size: 1.1rem; /* Set font size for paragraphs */
+  margin: 0 0 1rem; /* Adjust margin */
+  line-height: 1.5; /* Set line-height */
+}
+
+/* List (ul, ol, dl) styles */
+ul, ol, dl {
+  margin-top: 0; /* Remove top margin */
+  margin-bottom: 1rem; /* Set bottom margin */
+}
+
+/* Label styles */
+label {
+  display: inline-block; /* Make labels inline-block elements */
+}
+
+/* Reset margin for input, select, textarea, and button elements */
+input, select, textarea, button {
+  margin: 0;
+}
+
+/* Anchor (link) styles */
+a {
+  color: #1b89bc; /* Set link color */
+  text-decoration: none; /* Remove underlines from links */
+}
+
+/* Hover styles for links */
+a:hover {
+  color: #065b83; /* Change link color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Width utility classes */
+.w-100 {
+  width: 100%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+/* Minimum height and width utility classes */
+.min-100-vh {
+  min-height: 100vh;
+}
+
+.min-100-vw {
+  min-width: 100vw;
+}
+
+/* Margin utility classes (margins 0 to 5 and auto) for all sides */
+.m-0 {
+  margin: 0;
+}
+
+.m-1 {
+  margin: 0.375rem;
+}
+
+.m-2 {
+  margin: 0.625rem;
+}
+
+.m-3 {
+  margin: 1rem;
+}
+
+.m-4 {
+  margin: 1.375rem;
+}
+
+.m-5 {
+  margin: 1.625rem;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+/* Margin-bottom utility classes (mb-0 to mb-auto) */
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-1 {
+  margin-bottom: 0.375rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.625rem;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.375rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.625rem;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+/* Margin utility classes (my-0 to my-auto) for both top and bottom margins */
+.my-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.my-1 {
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
+}
+
+my-2 {
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+
+my-3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+my-4 {
+  margin-top: 1.375rem;
+  margin-bottom: 1.375rem;
+}
+
+my-5 {
+  margin-top: 1.625rem;
+  margin-bottom: 1.625rem;
+}
+
+my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Padding utility classes (p-0 to p-5) */
+.p-0 {
+  padding: 0;
+}
+
+p-1 {
+  padding: 0.375rem;
+}
+
+p-2 {
+  padding: 0.625rem;
+}
+
+p-3 {
+  padding: 1rem;
+}
+
+p-4 {
+  padding: 1.375rem;
+}
+
+p-5 {
+  padding: 1.625rem;
+}
+/* Text transformation utility classes */
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+/* Text alignment utility classes */
+.text-center {
+  text-align: center !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+/* Text color utility classes */
+.text-primary {
+  color: #2d3e50 !important;
+}
+
+.text-info {
+  color: #1bbc9b !important;
+}
+
+.text-danger {
+  color: #e64c66 !important;
+}
+
+.text-default {
+  color: #aeaeae !important;
+}
+
+.text-light {
+  color: #d9e9e8 !important;
+}
+
+.text-dark {
+  color: #1a1a1a !important;
+}
+
+text-white {
+  color: #ffffff !important;
+}
+
+text-black {
+  color: #000000 !important;
+}
+
+.text-link {
+  color: #1b89bc !important;
+}
+
+/* Background color utility classes */
+.bg-primary {
+  background-color: #2d3e50 !important;
+}
+
+.bg-info {
+  background-color: #1bbc9b !important;
+}
+
+.bg-danger {
+  background-color: #e64c66 !important;
+}
+
+.bg-light {
+  background-color: #d9e9e8 !important;
+}
+
+.bg-dark {
+  background-color: #1a1a1a !important;
+}
+
+bg-white {
+  background-color: #ffffff !important;
+}
+
+bg-black {
+  background-color: #000000 !important;
+}
+
+bg-link {
+  background-color: #1b89bc !important;
+}
+
+/* Display utility classes */
+.display-none {
+  display: none !important;
+}
+
+display-block {
+  display: block !important;
+}
+
+display-inline-block {
+  display: inline-block !important;
+}
+
+display-inline {
+  display: inline !important;
+}
+
+display-flex {
+  display: flex !important;
+}
+
+/* Button styles */
+.btn {
+  text-align: center;
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  margin: 0;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid transparent;
+  outline: none;
+  color: #1a1a1a;
+  background-color: #aeaeae;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #cecece;
+}
+
+.btn.btn-squared {
+  border-radius: 0;
+}
+
+.btn.btn-sm {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.9rem;
+}
+
+.btn.btn-lg {
+  font-size: 1.25rem;
+  padding: 0.8rem 1.4rem;
+}
+
+.btn.btn-block {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.btn.btn-primary {
+  background-color: #2d3e50;
+  color: #d9e9e8;
+}
+
+.btn.btn-primary:hover {
+  background-color: #57779a;
+}
+
+btn.btn-danger {
+  background-color: #e64c66;
+  color: #ffffff;
+}
+
+.btn.btn-danger:hover {
+  background-color: #ee8294;
+}
+
+btn.btn-info {
+  background-color: #1bbc9b;
+  color: #ffffff;
+}
+
+.btn.btn-info:hover {
+  background-color: #31e1bd;
+}
+
+btn.btn-light {
+  background-color: #d9e9e8;
+  color: #1a1a1a;
+}
+
+.btn.btn-light:hover {
+  background-color: #84b8b4;
+}
+
+btn.btn-dark {
+  background-color: #1a1a1a;
+  color: #d9e9e8;
+}
+
+.btn.btn-dark:hover {
+  background-color: #5f5f5f;
+}
+
+btn.btn-white {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+.btn.btn-white:hover {
+  background-color: #cccccc;
+}
+
+btn.btn-black {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn.btn-black:hover {
+  background-color: #666666;
+}
+
+btn.btn-link {
+  background-color: #1b89bc;
+  color: #ffffff;
+}
+
+.btn.btn-link:hover {
+  background-color: #31a9e1;
+}
+
+/* Styles for a generic card element */
+.card {
+  border: 1px solid #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+/* Card header styles */
+.card .card-header {
+  padding: 0.375rem;
+  background-color: #2d3e50;
+  color: #d9e9e8;
+}
+
+/* Card body styles */
+.card .card-body {
+  padding: 0.375rem;
+}
+
+/* Card footer styles */
+.card .card-footer {
+  border-top: 1px solid #1a1a1a;
+  padding: 0.375rem;
+}
+
+/* Rounded card with border-radius */
+.card.card-rounded {
+  border-radius: 0.3rem;
+}
+
+/* Rounded card header */
+.card.card-rounded .card-header {
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
+
+/* Form container styles */
+form {
+  width: 100%;
+}
+
+/* Form group styles */
+form .form-group {
+  display: block;
+  width: 100%;
+  margin: 0.625rem 0;
+}
+
+/* Form input and textarea styles */
+form .form-input,
+form .form-textarea {
+  display: block;
+}
+
+/* Custom select styles */
+form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 50%;
+}
+
+/* Label and form label styles */
+form label,
+form .form-label {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0.625rem 0 0.25rem 0.3rem;
+}
+
+/* Form input styles */
+form .form-input {
+  width: 100%;
+  padding: 0.75rem;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  margin: 0.625rem 0;
+  font-size: 1.2rem;
+  border: 1px solid #484848;
+  border-radius: 0.3rem;
+}
+
+/* Squared form input */
+form .form-input.form-input-squared {
+  border-radius: 0;
+}
+
+/* Checkbox and radio input styles */
+form [type='checkbox'],
+form [type='radio'] {
+  display: inline-block;
+}
+
+/* Container with maximum width */
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Fluid container with increased width */
+.container.container-fluid {
+  width: 92%;
+}
+
+/* Flexbox styles for a row */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Flexbox styles for a column */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* Flexbox styles for wrapping */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* Flexbox styles for no wrapping */
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
+
+/* Justify content space-between */
+.justify-space-between {
+  justify-content: space-between;
+}
+
+/* Justify content space-around */
+.justify-space-around {
+  justify-content: space-around;
+}
+
+/* Justify content flex-start */
+.justify-flex-start {
+  justify-content: flex-start;
+}
+
+/* Justify content flex-end */
+.justify-flex-end {
+  justify-content: flex-end;
+}
+
+/* Justify content center */
+.justify-center {
+  justify-content: center;
+}
+
+/* Align items flex-start */
+.align-start {
+  align-items: flex-start;
+}
+
+/* Align items stretch */
+.align-stretch {
+  align-items: stretch;
+}
+
+/* Align items flex-end */
+.align-end {
+  align-items: flex-end;
+}
+
+/* Align items center */
+.align-center {
+  align-items: center;
+}
+
+/* Align content flex-start */
+.align-content-start {
+  align-content: flex-start;
+}
+
+/* Align content stretch */
+.align-content-stretch {
+  align-content: stretch;
+}
+
+/* Align content flex-end */
+.align-content-end {
+  align-content: flex-end;
+}
+
+/* Align content center */
+.align-content-center {
+  align-content: center;
+}
+
+/* Styles for a row with flex wrapping */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+/* Generic column styles */
+[class*='col-'] {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Auto-growing column */
+.col-auto {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+/* Columns with various widths */
+.col-1 {
+  flex: 0 0 8.33333%;
+  max-width: 8.33333%;
+}
+  
+.col-2 {
+  flex: 0 0 16.66667%;
+  max-width: 16.66667%;
+}
+  
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+  
+.col-4 {
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+}
+  
+.col-5 {
+  flex: 0 0 41.66667%;
+  max-width: 41.66667%;
+}
+  
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+  
+.col-7 {
+  flex: 0 0 58.33333%;
+  max-width: 58.33333%;
+}
+  
+.col-8 {
+  flex: 0 0 66.66667%;
+  max-width: 66.66667%;
+}
+  
+.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+  
+.col-10 {
+  flex: 0 0 83.33333%;
+  max-width: 83.33333%;
+}
+  
+.col-11 {
+  flex: 0 0 91.66667%;
+  max-width: 91.66667%;
+}
+  
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* Media queries for small screens */
+  @media screen and (min-width: 640px) {
+    .col-sm-auto {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+    .col-sm-1 {
+      flex: 0 0 8.33333%;
+      max-width: 8.33333%;
+    }
+    .col-sm-2 {
+      flex: 0 0 16.66667%;
+      max-width: 16.66667%;
+    }
+    .col-sm-3 {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+    .col-sm-4 {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+    }
+    .col-sm-5 {
+      flex: 0 0 41.66667%;
+      max-width: 41.66667%;
+    }
+    .col-sm-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    .col-sm-7 {
+      flex: 0 0 58.33333%;
+      max-width: 58.33333%;
+    }
+    .col-sm-8 {
+      flex: 0 0 66.66667%;
+      max-width: 66.66667%;
+    }
+    .col-sm-9 {
+      flex: 0 0 75%;
+      max-width: 75%;
+    }
+    .col-sm-10 {
+      flex: 0 0 83.33333%;
+      max-width: 83.33333%;
+    }
+    .col-sm-11 {
+      flex: 0 0 91.66667%;
+      max-width: 91.66667%;
+    }
+    .col-sm-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .justify-space-between-sm {
+      justify-content: space-between;
+    }
+    .justify-space-around-sm {
+      justify-content: space-around;
+    }
+    .justify-flex-start-sm {
+      justify-content: flex-start;
+    }
+    .justify-flex-end-sm {
+      justify-content: flex-end;
+    }
+    .justify-center-sm {
+      justify-content: center;
+    }
+    .align-start-sm {
+      align-items: flex-start;
+    }
+    .align-stretch-sm {
+      align-items: stretch;
+    }
+    .align-end-sm {
+      align-items: flex-end;
+    }
+    .align-center-sm {
+      align-items: center;
+    }
+    .align-content-start-sm {
+      align-content: flex-start;
+    }
+    .align-content-stretch-sm {
+      align-content: stretch;
+    }
+    .align-content-end-sm {
+      align-content: flex-end;
+    }
+    .align-content-center-sm {
+      align-content: center;
+    }
+  }
+
+/* Media queries for medium screens */
+  @media screen and (min-width: 768px) {
+    .col-md-auto {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+    .col-md-1 {
+      flex: 0 0 8.33333%;
+      max-width: 8.33333%;
+    }
+    .col-md-2 {
+      flex: 0 0 16.66667%;
+      max-width: 16.66667%;
+    }
+    .col-md-3 {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+    .col-md-4 {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+    }
+    .col-md-5 {
+      flex: 0 0 41.66667%;
+      max-width: 41.66667%;
+    }
+    .col-md-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    .col-md-7 {
+      flex: 0 0 58.33333%;
+      max-width: 58.33333%;
+    }
+    .col-md-8 {
+      flex: 0 0 66.66667%;
+      max-width: 66.66667%;
+    }
+    .col-md-9 {
+      flex: 0 0 75%;
+      max-width: 75%;
+    }
+    .col-md-10 {
+      flex: 0 0 83.33333%;
+      max-width: 83.33333%;
+    }
+    .col-md-11 {
+      flex: 0 0 91.66667%;
+      max-width: 91.66667%;
+    }
+    .col-md-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .justify-space-between-md {
+      justify-content: space-between;
+    }
+    .justify-space-around-md {
+      justify-content: space-around;
+    }
+    .justify-flex-start-md {
+      justify-content: flex-start;
+    }
+    .justify-flex-end-md {
+      justify-content: flex-end;
+    }
+    .justify-center-md {
+      justify-content: center;
+    }
+    .align-start-md {
+      align-items: flex-start;
+    }
+    .align-stretch-md {
+      align-items: stretch;
+    }
+    .align-end-md {
+      align-items: flex-end;
+    }
+    .align-center-md {
+      align-items: center;
+    }
+    .align-content-start-md {
+      align-content: flex-start;
+    }
+    .align-content-stretch-md {
+      align-content: stretch;
+    }
+    .align-content-end-md {
+      align-content: flex-end;
+    }
+    .align-content-center-md {
+      align-content: center;
+    }
+  }
+
+/* Media queries for large screens */
+  @media screen and (min-width: 992px) {
+    .col-md-auto {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+    .col-lg-1 {
+      flex: 0 0 8.33333%;
+      max-width: 8.33333%;
+    }
+    .col-lg-2 {
+      flex: 0 0 16.66667%;
+      max-width: 16.66667%;
+    }
+    .col-lg-3 {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+    .col-lg-4 {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+    }
+    .col-lg-5 {
+      flex: 0 0 41.66667%;
+      max-width: 41.66667%;
+    }
+    .col-lg-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    .col-lg-7 {
+      flex: 0 0 58.33333%;
+      max-width: 58.33333%;
+    }
+    .col-lg-8 {
+      flex: 0 0 66.66667%;
+      max-width: 66.66667%;
+    }
+    .col-lg-9 {
+      flex: 0 0 75%;
+      max-width: 75%;
+    }
+    .col-lg-10 {
+      flex: 0 0 83.33333%;
+      max-width: 83.33333%;
+    }
+    .col-lg-11 {
+      flex: 0 0 91.66667%;
+      max-width: 91.66667%;
+    }
+    .col-lg-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .justify-space-between-lg {
+      justify-content: space-between;
+    }
+    .justify-space-around-lg {
+      justify-content: space-around;
+    }
+    .justify-flex-start-lg {
+      justify-content: flex-start;
+    }
+    .justify-flex-end-lg {
+      justify-content: flex-end;
+    }
+    .justify-center-lg {
+      justify-content: center;
+    }
+    .align-start-lg {
+      align-items: flex-start;
+    }
+    .align-stretch-lg {
+      align-items: stretch;
+    }
+    .align-end-lg {
+      align-items: flex-end;
+    }
+    .align-center-lg {
+      align-items: center;
+    }
+    .align-content-start-lg {
+      align-content: flex-start;
+    }
+    .align-content-stretch-lg {
+      align-content: stretch;
+    }
+    .align-content-end-lg {
+      align-content: flex-end;
+    }
+    .align-content-center-lg {
+      align-content: center;
+    }
+  }
+  
+/* Media queries for extra-large screens */  
+  @media screen and (min-width: 1200px) {
+    .col-xl-1 {
+      flex: 0 0 8.33333%;
+      max-width: 8.33333%;
+    }
+    .col-xl-2 {
+      flex: 0 0 16.66667%;
+      max-width: 16.66667%;
+    }
+    .col-xl-3 {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+    .col-xl-4 {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+    }
+    .col-xl-5 {
+      flex: 0 0 41.66667%;
+      max-width: 41.66667%;
+    }
+    .col-xl-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    .col-xl-7 {
+      flex: 0 0 58.33333%;
+      max-width: 58.33333%;
+    }
+    .col-xl-8 {
+      flex: 0 0 66.66667%;
+      max-width: 66.66667%;
+    }
+    .col-xl-9 {
+      flex: 0 0 75%;
+      max-width: 75%;
+    }
+    .col-xl-10 {
+      flex: 0 0 83.33333%;
+      max-width: 83.33333%;
+    }
+    .col-xl-11 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .col-xl-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .justify-space-between-xl {
+      justify-content: space-between;
+    }
+    .justify-space-around-xl {
+      justify-content: space-around;
+    }
+    .justify-flex-start-xl {
+      justify-content: flex-start;
+    }
+    .justify-flex-end-xl {
+      justify-content: flex-end;
+    }
+    .justify-center-xl {
+      justify-content: center;
+    }
+    .align-start-xl {
+      align-items: flex-start;
+    }
+    .align-stretch-xl {
+      align-items: stretch;
+    }
+    .align-end-xl {
+      align-items: flex-end;
+    }
+    .align-center-xl {
+      align-items: center;
+    }
+    .align-content-start-xl {
+      align-content: flex-start;
+    }
+    .align-content-stretch-xl {
+      align-content: stretch;
+    }
+    .align-content-end-xl {
+      align-content: flex-end;
+    }
+    .align-content-center-xl {
+      align-content: center;
+    }
+  }

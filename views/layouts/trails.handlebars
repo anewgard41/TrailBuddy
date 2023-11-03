@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="h-full bg-green-50" lang="en">
+<head>
+  <!-- Meta tags and title for the web page -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | TrailBuddy 2023</title>
+
+  <!-- External script and links -->
+  <script src="http://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="min-h-full bg-green-50">
+  <!-- Navigation bar -->
+  <nav class="bg-gray-800">
+    <!-- Navigation bar content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Navigation bar elements -->
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo and menu for larger screens -->
+        <div class="flex items-center">
+          <!-- Logo -->
+          <img src="/public/images/trailbuddy-logo.png" alt="TrailBuddy Logo">
+          <!-- Menu items for larger screens -->
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              <!-- Links to different pages -->
+              <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+              <a href="/hikingTips" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Hiking Tips</a>
+              <a href="/trails" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Trails</a>
+              <a href="/experiences" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Experiences</a>
+              <!-- Conditional rendering of login or logout links -->
+              {{#if logged_in}}
+              <a href="#" class="logout-link bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Logout</a>
+              {{else}}
+              <a href="/login" class="text-gray-300 hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        <!-- Mobile menu button for small screens -->
+        <div class="-mr-2 flex md:hidden">
+          <!-- Mobile menu button content -->
+          <button id="togglemebutton" type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="resultnav" aria-expanded="false">
+            <!-- Mobile menu button icons -->
+            <span class="sr-only">Open Main Menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu (hidden) -->
+    <div class="hidden md:hidden" id="resultnav">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <!-- Mobile menu items -->
+        <a href="/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Home</a>
+        <a href="/hikingTips" class="text-gray-300 hover-bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Hiking Tips</a>
+        <a href="/trails" class="text-gray-300 hover-bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Trails</a>
+        <a href="/experiences" class="text-gray-300 hover-bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Experiences</a>
+        <!-- Conditional rendering of login or logout links in the mobile menu -->
+        {{#if logged_in}}
+        <a href="#" class="logout-link text-gray-300 hover-bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Logout</a>
+        {{else}}
+        <a href="/login" class="text-gray-300 hover-bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+        {{/if}}
+      </div>
+    </div>
+  </nav>
+  <!-- Page header with a gradient background -->
+  <header class="bg-gradient-to-r from-green-800 via-green-400 to-green-200">
+    <!-- Header content -->
+    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold text-white">TrailBuddy 2023</h1>
+    </div>
+        <!-- Search Section -->
+    <section class="my-2">
+      <div class="max-w-7x1 mx-1 items-center p-2">
+        <input type="text" id="trailSearchInput" placeholder="Search for a trail..." class="p-2 border rounded-md w-full max-w-lg">
+        <button id="searchTrailsButton" class="mt-2 bg-blue-600 text-white p-2 rounded-md">Search</button>
+      </div>
+    </section>
+
+  </header>
+  <!-- Main content area -->
+  <main class="col-auto">
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <!-- Search results template -->
+      <script id="trails-template" type="text/x-handlebars-template">
+          <ul>
+              {{#each trails}}
+              <li>{{trail_name}} - {{trail_location}}</li>
+              {{/each}}
+          </ul>
+      </script>
+
+      <!-- Place to display search results -->
+      <div id="searchResults"></div>
+
+      {{{body}}} <!-- This is where dynamic content is inserted -->
+    </div>
+  </main>
+</body>
+<!-- Footer section -->
+<footer id="footer" class="bg-gray-800 text-center lg:text-left">
+  <div class="text-green-50 text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+    <!-- Copyright notice and link (modify as needed) -->
+    © 2023 Copyright:
+    <a class="text-green-600" href="#">TrailBuddy 2023</a>
+  </div>
+</footer>
+<!-- Closing HTML tag -->
+<script src="/js/trailSearch.js"></script>
+</html>
+
+{{#if logged_in}}
+<!-- Include logout script if the user is logged in (modify src attribute as needed) -->
+<script src="/js/logout.js"></script>
+{{/if}}
+
+<!-- Always include passive.js script (modify src attribute as needed) -->
+<script src="/js/passive.js"></script>
