@@ -24,16 +24,19 @@ const seedDatabase = async () => {
         title: 'Funny Post 1',
         dateCreated: new Date(),
         body: 'Just discovered a new species of sock under my bed. I think it might be a distant relative of the dust bunny. 🧦🦔 #SockSafari',
+        user_id: users[0].id
       },
       {
         title: 'Funny Post 2',
         dateCreated: new Date(),
         body: "I just tried to make a smoothie, but my blender started playing 'Eye of the Tiger' instead. I guess it wanted a workout too! 🥤🐯💪 #SmoothieShowdown",
+        user_id: users[1].id
       },
       {
         title: 'Funny Post 3',
         dateCreated: new Date(),
         body: 'Decided to start a band with my fridge. We call ourselves "The Cool Compressors." Our first hit? A chilled-out version of "Hotline Bling." 🎶❄️ #FridgeGrooves',
+        user_id: users[2].id
       }
   ]);
 
