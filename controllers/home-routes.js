@@ -4,33 +4,42 @@ const { Trails } = require('../models');
 const { Op } = require('sequelize');
 
 // Get posts for homepage, including the post creator's username and the comments associated with the post.
+// router.get('/', async (req, res) => {
+//     try {
+
+//         const postData = await Post.findAll({  
+//             include: [
+//                 {
+//                     model: User,
+//                     attributes: ['username'],
+//                 },
+//                 {
+//                     model: Comment,
+//                     include: {
+//                         model: User,
+//                         attributes: ['username'],
+//                     },
+//                 },
+//             ],
+//             order: [['dateCreated', 'DESC']],  
+//             }); 
+
+//             const posts = postData.map((post) => post.get({ plain: true }));
+       
+//         res.render('homepage'
+//             ,{ layout : main, 
+//                 posts,
+//                 loggedIn: req.session.loggedIn
+//             });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
+
+// GET method used to retrieve homepage with the layout main.
 router.get('/', async (req, res) => {
     try {
-
-        const postData = await Post.findAll({
-            include: [
-                {
-                    model: User,
-                    attributes: ['username'],
-                },
-                {
-                    model: Comment,
-                    include: {
-                        model: User,
-                        attributes: ['username'],
-                    },
-                },
-            ],
-            order: [['dateCreated', 'DESC']],
-            });
-
-            const posts = postData.map((post) => post.get({ plain: true }));
-       
-        res.render('homepage'
-            ,{ layout : main, 
-                posts,
-                loggedIn: req.session.loggedIn
-            });
+        res.render("homepage", { layout: "main" });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -39,7 +48,7 @@ router.get('/', async (req, res) => {
 // GET login route- renders the login page. 
 router.get('/login', async (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/experiences');
+        res.redirect('/experiences'); 
         return;
     }
     
@@ -55,20 +64,6 @@ router.get('/signup', async (req, res) => {
     
     res.render('signup');
 });
-
-router.get('/', (req, res) => {
-    res.render('homepage');
-});
-
-router.get('/trails', async (req, res) => {
-    try {
-        // Render the trails.handlebars view
-        res.render('layouts/trails');
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
 
 router.get('/api/searchTrails', async (req, res) => {
     try {
