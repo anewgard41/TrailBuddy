@@ -8,7 +8,14 @@ Post.init(
     {
         title: DataTypes.STRING,
         dateCreated: DataTypes.DATE,
-        body: DataTypes.TEXT
+        body: DataTypes.TEXT,
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: "user",
+                key: "id"
+            }
+        }
     },
     {
         sequelize
