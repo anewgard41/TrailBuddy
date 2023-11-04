@@ -37,7 +37,7 @@ Hike on, trailblazers, and welcome to the TrailBuddy family! 🌲🥾🌄
 
 ## User Story
 
-As avid hikers and nature enthusiasts, we want to use this TrailBuddy application to explore new hiking trails, shared trail experiences, and connect with a community of like-minded individuals.
+As avid hikers and nature enthusiasts, we want to use this TrailBuddy application to explore new hiking trails, share trail experiences, and connect with a community of like-minded individuals.
 
 ## Acceptance Criteria
 
@@ -49,7 +49,7 @@ WHEN we enter schema and seed commands
 THEN a development database is created and is seeded with test data
 GIVEN a synced application
 WHEN we enter the command to invoke the application
-THEN our server is started and the Sequelize models are synced to the MySQL database
+THEN the server is started and the Sequelize models are synced to the MySQL database
 GIVEN a live server
 WHEN we open API GET routes for hiking trails, users, and reviews
 THEN the data for each of these routes is displayed in a formatted JSON
@@ -79,7 +79,7 @@ Overall, the "Hiking Trails Guide" is an indispensable resource for hikers and a
 
 ### Test Instructions
 
-Currently no test has been setup for this application.
+Currently, no test has been set up for this application.
 
 ### License
 
@@ -87,7 +87,7 @@ This is a brief and permissive license that necessitates only the retention of c
 
 ## Roadmap
 
-Currently there are <u><b>NO</b></u> open issues. Please check the [issues](https://github.com/anewgard41/TrailBuddy/issues) page on GitHub for any updates.
+Currently, there are <u><b>NO</b></u> open issues. Please check the [issues](https://github.com/anewgard41/TrailBuddy/issues) page on GitHub for any updates.
 
 ## Contribute
 
