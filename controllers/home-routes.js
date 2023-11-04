@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
                     },
                 },
             ],
-            order: [['dateCreated', 'DESC']],  
+            order: [['date_created', 'DESC']],  
             }); 
 
             const posts = postData.map((post) => post.get({ plain: true }));

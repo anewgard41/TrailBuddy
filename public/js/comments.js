@@ -7,11 +7,11 @@ const commentFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect the content of the comment from the textarea.
-  const content = document.querySelector('textarea[name="comment-body"]').value.trim();
+  const content = document.querySelector('textarea[name="comment-content"]').value.trim();
 
   if (content) {
     // Send a POST request to the '/api/comment' endpoint with the new comment data.
-    const response = await fetch('/api/comment', {
+    const response = await fetch('/api/comments', {
       method: 'POST',
       body: JSON.stringify({
         post_id,
