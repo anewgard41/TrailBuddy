@@ -8,7 +8,7 @@ router.post("/", withAuth, async (req, res) => {
         // Create a new comment with the comment text, the post id associated with the comment, and the user id of the logged in user.
         const newComment = await Comment.create({
             ...req.body,
-            userId: req.session.userId,
+            user_id: req.session.user_id,
         });
 
         res.status(200).json(newComment);
@@ -23,7 +23,7 @@ router.put("/:id", withAuth, async (req, res) => {
         const commentData = await Comment.update(req.body, {
             where: {
                 id: req.params.id,
-                userId: req.session.userId,
+                user_id: req.session.user_id,
             },
         });
         // If no comment is found with the specified id, return an error message.
@@ -44,7 +44,7 @@ router.delete("/:id", withAuth, async (req, res) => {
         const commentData = await Comment.destroy({
             where: {
                 id: req.params.id,
-                userId: req.session.userId,
+                user_id: req.session.user_id,
             },
         });
         // If no comment is found with the specified id, return an error message.
