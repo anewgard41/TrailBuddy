@@ -9,7 +9,8 @@ router.post('/', async (req, res) => {
         const userData = await User.create(req.body);
         
         req.session.save(() => {
-            req.session.user_id = userData.id; 
+            req.session.user_id = userData.id;
+            req.session.username = userData.username; 
             req.session.loggedIn = true;
             
             res.status(200).json(userData);
@@ -41,6 +42,7 @@ router.post('/login', async (req, res) => {
         // If the password is valid, save the session, and set the loggedIn property to true. Then send a response with the user's information.
         req.session.save(() => {
             req.session.user_id = userData.id;
+            req.session.username = userData.username;
             req.session.loggedIn = true;
             console.log(req.session.loggedIn);    
             res.json({ user: userData, message: 'You are now logged in!' });
