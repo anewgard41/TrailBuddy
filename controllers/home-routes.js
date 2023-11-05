@@ -46,7 +46,7 @@ router.get('/', async (req, res) => {
 // });
 
 // Define a route that handles GET requests for viewing a specific post
-router.get('/post/:id', withAuth, async (req, res) => {
+router.get('/post/:id', async (req, res) => {
     try {
       // Retrieve the post with the specified ID, including associated users and comments
       const postData = await Post.findOne({
