@@ -210,6 +210,10 @@ img, svg, video, canvas, audio, iframe, embed, object {
   vertical-align: middle;
 }
 
+#tb-logo {
+width: 100px;
+}
+
 img, video {
   max-width: 100%;
   height: auto;
