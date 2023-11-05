@@ -45,6 +45,40 @@ router.get('/', async (req, res) => {
 //     }
 // });
 
+router.get('/post/:id', withAuth, async (req, res) => {
+    try {
+      //const pageTitle = 'Posts';
+      const postData = await Post.findOne({
+        where: {
+          id: req.params.id
+        },
+        include: [
+          User,
+          {
+            model: Comment,
+            include: [User],
+          },
+        ],
+        order: [
+          ['date_created', 'DESC'],
+        ]
+      });
+  
+      if (postData) {
+        const post = postData.get({ plain: true });
+  
+        res.render('single-post', {
+          post,
+          logged_in: req.session.logged_in
+        });
+      } else {
+        res.status(404).end();
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
 // GET login route- renders the login page. 
 router.get('/login', async (req, res) => {
     if (req.session.loggedIn) {
