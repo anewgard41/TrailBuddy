@@ -4,46 +4,46 @@ const { Trails } = require('../models');
 const { Op } = require('sequelize');
 
 // Get posts for homepage, including the post creator's username and the comments associated with the post.
-// router.get('/', async (req, res) => {
-//     try {
-
-//         const postData = await Post.findAll({  
-//             include: [
-//                 {
-//                     model: User,
-//                     attributes: ['username'],
-//                 },
-//                 {
-//                     model: Comment,
-//                     include: {
-//                         model: User,
-//                         attributes: ['username'],
-//                     },
-//                 },
-//             ],
-//             order: [['dateCreated', 'DESC']],  
-//             }); 
-
-//             const posts = postData.map((post) => post.get({ plain: true }));
-       
-//         res.render('homepage'
-//             ,{ layout : main, 
-//                 posts,
-//                 loggedIn: req.session.loggedIn
-//             });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
-// GET method used to retrieve homepage with the layout main.
 router.get('/', async (req, res) => {
     try {
-        res.render("homepage", { layout: "main" });
+
+        const postData = await Post.findAll({  
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+                {
+                    model: Comment,
+                    include: {
+                        model: User,
+                        attributes: ['username'],
+                    },
+                },
+            ],
+            order: [['date_created', 'DESC']],  
+            }); 
+
+            const posts = postData.map((post) => post.get({ plain: true }));
+       
+        res.render('homepage'
+            ,{ layout : "main", 
+                posts,
+                loggedIn: req.session.loggedIn
+            });
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
+// GET method used to retrieve homepage with the layout main.
+// router.get('/', async (req, res) => {
+//     try {
+//         res.render("homepage", { layout: "main" });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 // GET login route- renders the login page. 
 router.get('/login', async (req, res) => {
@@ -83,5 +83,3 @@ router.get('/api/searchTrails', async (req, res) => {
 });
 
 module.exports = router;
-
-

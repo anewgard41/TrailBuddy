@@ -5,10 +5,10 @@ const withAuth = require('../utilities/authenticate.js');
 // Get all posts or experiences for the logged in user with associated comments. 
 router.get('/', async (req, res) => {
     try {
-        
+        console.log(req.session.user_id);
         const postData = await Post.findAll({
             where : {
-                user_id: 1 // req.session.user_id
+                user_id: req.session.user_id
             },
             include: [
                 {
@@ -23,8 +23,8 @@ router.get('/', async (req, res) => {
                     },
                 },
             ],
-            order: [['dateCreated', 'DESC']],
-        });
+            order: [['date_created', 'DESC']],
+        }); 
         
         const posts = postData.map((post) => post.get({ plain: true }));
 

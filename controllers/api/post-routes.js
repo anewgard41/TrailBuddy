@@ -3,11 +3,14 @@ const { Post } = require('../../models');
 const withAuth = require('../../utilities/authenticate.js');
 
 // POST method to create a new post or experience. 
+
 router.post('/', withAuth, async (req, res) => {
+    
+    debugger;
     try {
         const newPost = await Post.create({
             ...req.body,
-            userId: req.session.userId,
+            user_id: req.session.user_id,
         });
 
         res.status(200).json(newPost);
@@ -22,7 +25,7 @@ router.put('/:id', withAuth, async (req, res) => {
         const postData = await Post.update(req.body, {
             where: {
                 id: req.params.id,
-                userId: req.session.userId,
+                user_id: req.session.user_id,
             },
         });
         // If no post is found with the specified id, return an error message.
@@ -43,7 +46,7 @@ router.delete('/:id', withAuth, async (req, res) => {
         const postData = await Post.destroy({
             where: {
                 id: req.params.id,
-                userId: req.session.userId,
+                user_id: req.session.user_id,
             },
         });
         // If no post is found with the specified id, return an error message.
