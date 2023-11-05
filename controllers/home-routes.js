@@ -45,6 +45,41 @@ router.get('/', async (req, res) => {
 //     }
 // });
 
+// Define a route that handles GET requests for viewing a specific post
+router.get('/post/:id', withAuth, async (req, res) => {
+    try {
+      // Retrieve the post with the specified ID, including associated users and comments
+      const postData = await Post.findOne({
+        where: {
+          id: req.params.id
+        },
+        include: [
+          User, // Include the associated user data
+          {
+            model: Comment, // Include comments associated with the post
+            include: [User] // Include the associated user data for each comment
+          }
+        ],
+        order: [
+          ['date_created', 'DESC'] // Order the comments by date_created in descending order
+        ]
+      });
+  
+      if (!postData) {
+        // Handle the case where the post with the specified ID is not found
+        return res.status(404).json({ error: 'Post not found' });
+      }
+  
+      // If the post is found, you can render a template or send the data in a response
+      // For example, you can send the postData as a JSON response
+      res.json(postData);
+    } catch (error) {
+      // Handle any errors that may occur during the database query or processing
+      console.error(error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+
 // GET login route- renders the login page. 
 router.get('/login', async (req, res) => {
     if (req.session.loggedIn) {

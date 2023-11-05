@@ -30,7 +30,7 @@ const editFormHandler = async (event) => {
     // alert('Failed to update your post');
   }
   // Redirect to the user's dashboard page after updating the post.
-  document.location.replace('/dashboard');
+  document.location.replace('/experiences');
 };
 
 // Define an asynchronous function called 'deleteClickHandler' to handle the click event for post deletion.
@@ -41,7 +41,7 @@ const deleteClickHandler = async () => {
   });
 
   // Redirect to the user's dashboard page after deleting the post.
-  document.location.replace('/dashboard');
+  document.location.replace('/experiences');
 };
 
 // Add a submit event listener to the edit post form to trigger the 'editFormHandler' function.

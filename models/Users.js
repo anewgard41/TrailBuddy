@@ -21,11 +21,12 @@ User.init (
             // instruct that this is the Primary Key
             primaryKey: true,
             // turn on auto increment
-            autoIncrement: true
+            autoIncrement: true,
         },
         username: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            unique: true,
         },
         password: {
              type: DataTypes.STRING,
@@ -55,7 +56,7 @@ User.init (
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'User'
+        modelName: 'User',
     }   
 );
 
