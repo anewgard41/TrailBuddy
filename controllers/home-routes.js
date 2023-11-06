@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 const { Trails } = require('../models');
 const { Op } = require('sequelize');
+const withAuth = require('../utilities/authenticate.js');
 
 // Get posts for homepage, including the post creator's username and the comments associated with the post.
 router.get('/', async (req, res) => {
@@ -27,10 +28,7 @@ router.get('/', async (req, res) => {
             const posts = postData.map((post) => post.get({ plain: true }));
        
         res.render('homepage'
-            ,{ layout : "main", 
-                posts,
-                loggedIn: req.session.loggedIn
-            });
+            ,{ layout : "main" });
     } catch (err) {
         res.status(500).json(err);
     }

@@ -14,7 +14,10 @@
         "type": "git",
         "url": "git+http://github.com/anewgard41/TrailBuddy"
     },
-    "keywords": [],
+    "keywords": [
+        "heroku",
+        "express"
+    ],
     "author": "",
     "license": "MIT",
     "dependencies": {
@@ -39,5 +42,8 @@
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-import": "^2.26.0",
         "prettier": "2.6.2"
+    },
+    "engines": {
+        "node": "18.17.1"
     }
 }

@@ -6,7 +6,6 @@ const withAuth = require('../../utilities/authenticate.js');
 
 router.post('/', withAuth, async (req, res) => {
     
-    debugger;
     try {
         const newPost = await Post.create({
             ...req.body,
