@@ -102,7 +102,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
                 //const post = postData.get({ plain: true });
         //res.render("editItem", { layout: "experiences", post });
     //} catch (err) {
-        res.status(500).json(err);
+        //res.status(500).json(err);
     //}
 //});
         if (postData) {
