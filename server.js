@@ -18,7 +18,7 @@ const sess = {
     secret: "do NOT tell anybody or ELSE I will CRY!",
     cookie: {
         // maxAge controls how long the session will stay active in milliseconds
-        maxAge: 300000,
+        maxAge: 30000000,
         httpOnly: true,
         secure: false,
         sameSite: 'strict'

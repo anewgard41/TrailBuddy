@@ -1,14 +1,19 @@
 const router = require("express").Router();
-const { Comment } = require("../../models");
+const { Comment, Post, User } = require("../../models");
 const withAuth = require("../../utilities/authenticate.js");
 
 // POST method to create a new comment.
-router.post("/", withAuth, async (req, res) => {
+router.post('/:post_id', withAuth, async (req, res) => {
     try {
-        // Create a new comment with the comment text, the post id associated with the comment, and the user id of the logged in user.
+        const { content } = req.body;
+        const { user_id } = req.session;
+        const post_id = req.params.post_id;
+
+        // Create the comment and associate it with the specific post
         const newComment = await Comment.create({
-            ...req.body,
-            user_id: req.session.user_id,
+            content,
+            user_id,
+            post_id,
         });
 
         res.status(200).json(newComment);

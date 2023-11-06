@@ -12,3 +12,4 @@ const fetchTrails = async (page = 1) => {
 };
 
 module.exports = { fetchTrails };
+ 
