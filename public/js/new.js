@@ -23,7 +23,7 @@ const newFormHandler = async (event) => {
   
       // Check if the response from the server is successful (HTTP status code 200).
       if (response.ok) {
-        // If the post creation is successful, redirect the browser to the user's dashboard.
+        // If the post creation is successful, redirect the browser to the user's experience page.
         document.location.replace('/experiences');
       } else {
         // If there's an error in post creation, show an alert with the error message.

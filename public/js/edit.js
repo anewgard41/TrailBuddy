@@ -29,7 +29,7 @@ const editFormHandler = async (event) => {
     // If there's an error in updating the post, you can optionally display an alert.
     // alert('Failed to update your post');
   }
-  // Redirect to the user's dashboard page after updating the post.
+  // Redirect to the user's experiences page after updating the post.
   document.location.replace('/experiences');
 };
 

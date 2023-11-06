@@ -48,6 +48,7 @@ router.get('/new', withAuth, async (req, res) => {
 // GET method for editing a single post or experience with its associated comments and users.
 router.get('/edit/:id', withAuth, async (req, res) => {
     try {
+        debugger;
         const postData = await Post.findByPk(req.params.id, {
             include: [
                 {
@@ -65,7 +66,9 @@ router.get('/edit/:id', withAuth, async (req, res) => {
         });
         
         const post = postData.get({ plain: true });
-        res.render("editItem", { layout: "experiences", post });
+        res.render("editItem", 
+        { layout: "experiences", post }
+        );
     } catch (err) {
         res.status(500).json(err);
     }
