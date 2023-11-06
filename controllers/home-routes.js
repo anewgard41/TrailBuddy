@@ -45,38 +45,37 @@ router.get('/', async (req, res) => {
 //     }
 // });
 
-// Define a route that handles GET requests for viewing a specific post
 router.get('/post/:id', withAuth, async (req, res) => {
     try {
-      // Retrieve the post with the specified ID, including associated users and comments
+      //const pageTitle = 'Posts';
       const postData = await Post.findOne({
         where: {
           id: req.params.id
         },
         include: [
-          User, // Include the associated user data
+          User,
           {
-            model: Comment, // Include comments associated with the post
-            include: [User] // Include the associated user data for each comment
-          }
+            model: Comment,
+            include: [User],
+          },
         ],
         order: [
-          ['date_created', 'DESC'] // Order the comments by date_created in descending order
+          ['date_created', 'DESC'],
         ]
       });
   
-      if (!postData) {
-        // Handle the case where the post with the specified ID is not found
-        return res.status(404).json({ error: 'Post not found' });
-      }
+      if (postData) {
+        const post = postData.get({ plain: true });
   
-      // If the post is found, you can render a template or send the data in a response
-      // For example, you can send the postData as a JSON response
-      res.json(postData);
-    } catch (error) {
-      // Handle any errors that may occur during the database query or processing
-      console.error(error);
-      res.status(500).json({ error: 'Internal server error' });
+        res.render('single-post', {
+          post,
+          logged_in: req.session.logged_in
+        });
+      } else {
+        res.status(404).end();
+      }
+    } catch (err) {
+      res.status(500).json(err);
     }
   });
 
