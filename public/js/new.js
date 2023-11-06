@@ -1,6 +1,5 @@
 // Define an asynchronous function called 'newFormHandler' to handle the submission of a new post form.
 const newFormHandler = async (event) => {
-  debugger;
     // Prevent the default form submission behavior to handle it with JavaScript.
     event.preventDefault();
   

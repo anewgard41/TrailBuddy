@@ -24,7 +24,6 @@ router.post('/', async (req, res) => {
 // Post route responsible for logging in a user. 
 router.post('/login', async (req, res) => {
     try {
-        debugger;
         // Find the user who matches the posted username.
         const userData = await User.findOne({ where: { username: req.body.username } });
         // If no user with that username is found, return an error.

@@ -5,9 +5,13 @@ const withAuth = require('../utilities/authenticate.js');
 // Get all posts or experiences for the logged in user with associated comments. 
 router.get('/', withAuth, async (req, res) => {
     try {
-        console.log(req.session.user_id);
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Post }],
+        });
+
         const postData = await Post.findAll({
-            where : {
+            where: {
                 user_id: req.session.user_id
             },
             include: [
@@ -23,14 +27,16 @@ router.get('/', withAuth, async (req, res) => {
                     },
                 },
             ],
-            order: [['date_created', 'DESC']],
-        }); 
-        
+        });
+        const user = userData.get({ plain: true });
+        console.log(userData);
         const posts = postData.map((post) => post.get({ plain: true }));
-
-       console.log(posts);
-        res.render("all-post",
-        {layout : "experiences", posts});
+        res.render('all-post', {
+            layout: 'experiences',
+            ...user,
+            posts,
+            loggedIn: true
+        });
     } catch (err) {
         res.redirect('login');
     }
@@ -48,7 +54,6 @@ router.get('/new', withAuth, async (req, res) => {
 // GET method for editing a single post or experience with its associated comments and users.
 router.get('/edit/:id', withAuth, async (req, res) => {
     try {
-        debugger;
         const postData = await Post.findByPk(req.params.id, {
             include: [
                 {
@@ -65,13 +70,19 @@ router.get('/edit/:id', withAuth, async (req, res) => {
             ],
         });
         
-        const post = postData.get({ plain: true });
-        res.render("editItem", 
-        { layout: "experiences", post }
-        );
+        if (postData) {
+            const post = postData.get({ plain: true });
+            res.render('edit-posts', {
+                layout: 'experiences',
+                post,
+            });
+        } else {
+            res.status(404).end();
+        }
     } catch (err) {
-        res.status(500).json(err);
+        res.redirect('login');
     }
 });
+
 
 module.exports = router;

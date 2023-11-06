@@ -36,7 +36,7 @@ const editFormHandler = async (event) => {
 // Define an asynchronous function called 'deleteClickHandler' to handle the click event for post deletion.
 const deleteClickHandler = async () => {
   // Send a DELETE request to the '/api/post/:post_id' endpoint for post deletion.
-  await fetch(`/api/post/${post_id}`, {
+  await fetch(`/api/posts/${post_id}`, {
     method: 'DELETE'
   });
 
