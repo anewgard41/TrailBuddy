@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
             },
             include: [
                 {
-                    model: User,
+                    model: User,   
                     attributes: ['username'],
                 },
                 {
@@ -63,8 +63,20 @@ router.get('/edit/:id', async (req, res) => {
             ],
         });
         
+<<<<<<< HEAD
         const post = postData.get({ plain: true });
         res.render("editItem", { layout: "experiences", post });
+=======
+        if (postData) {
+            const post = postData.get({ plain: true });
+            res.render('edit-posts', {
+                layout: 'experiences',
+                post,
+            });
+        } else {
+            res.status(404).end();
+        }
+>>>>>>> 07313c2514164cd21bd52687172cfcac15a0073f
     } catch (err) {
         res.status(500).json(err);
     }

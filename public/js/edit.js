@@ -29,14 +29,14 @@ const editFormHandler = async (event) => {
     // If there's an error in updating the post, you can optionally display an alert.
     // alert('Failed to update your post');
   }
-  // Redirect to the user's dashboard page after updating the post.
+  // Redirect to the user's experiences page after updating the post.
   document.location.replace('/experiences');
 };
 
 // Define an asynchronous function called 'deleteClickHandler' to handle the click event for post deletion.
 const deleteClickHandler = async () => {
   // Send a DELETE request to the '/api/post/:post_id' endpoint for post deletion.
-  await fetch(`/api/post/${post_id}`, {
+  await fetch(`/api/posts/${post_id}`, {
     method: 'DELETE'
   });
 

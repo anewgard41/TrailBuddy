@@ -1,12 +1,11 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, } = require('../../models');
 const withAuth = require('../../utilities/authenticate.js');
 
 // POST method to create a new post or experience. 
 
 router.post('/', withAuth, async (req, res) => {
     
-    debugger;
     try {
         const newPost = await Post.create({
             ...req.body,
@@ -21,6 +20,7 @@ router.post('/', withAuth, async (req, res) => {
 
 // PUT method to update a post or experience by its id.
 router.put('/:id', withAuth, async (req, res) => {
+    debugger;
     try {
         const postData = await Post.update(req.body, {
             where: {

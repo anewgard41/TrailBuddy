@@ -20,7 +20,7 @@ const signupFormHandler = async (event) => {
   
       // Check if the response from the server is successful (HTTP status code 200).
       if (response.ok) {
-        // If the user signup is successful, redirect the browser to the user's dashboard.
+        // If the user signup is successful, redirect the browser to the user's experiences page.
         document.location.replace('/experiences');
       } else {
         // If there's an error in user signup, show an alert with the error message.

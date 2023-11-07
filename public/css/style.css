@@ -151,6 +151,13 @@ summary {
   display: list-item;
 }
 
+/* Style for the hiking tips section */
+.green-list {
+  list-style-type: decimal; /* You can change the bullet style here */
+  color: #004d2a; /* Green text color */
+  
+}
+
 /* Reset margin for various elements */
 blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
   margin: 0;
