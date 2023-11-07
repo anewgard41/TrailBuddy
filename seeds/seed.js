@@ -15,15 +15,6 @@ const seedDatabase = async () => {
     individualHooks: true,
   });
 
-  // Seed Trails
-  const trails = await Trails.bulkCreate([
-    { trail_name: 'Laughing Loop Trail', trail_location: 'Humor Hills', trail_length: 3.5 },
-    { trail_name: 'Pun Pathway', trail_location: 'Joke Junction', trail_length: 2.2 },
-    { trail_name: 'Comedy Canyon Trail', trail_location: 'Giggle Gorge', trail_length: 5.1 },
-  ]);
-
-  // const trails = await Trails.populateFromAPI();
-
   // Seed Posts
   const post = await Post.bulkCreate([
     {
@@ -56,41 +47,5 @@ const seedDatabase = async () => {
 
 seedDatabase();
 
-// Below formatting for seeding based off of previous homeworks. 
-
-// const sequelize = require('../config/connection');
-// const { User, Post, Comment } = require('../models');
-
-// const userData = require('./user-data.json');
-// const postData = require('./post-data.json');
-// const commentData = require('./comment-data.json');
-
-// const seedDatabase = async () => {
-//     await sequelize.sync({ force: true });
-
-//     const users = await User.bulkCreate(userData, {
-//         individualHooks: true,
-//         returning: true,
-//     });
-
-//     for (const post of postData) {
-//         await Post.create({
-//             ...post,
-//             user_id: users[Math.floor(Math.random() * users.length)].id,
-//         });
-//     };
-
-//     for (const comment of commentData) {
-//         await Comment.create({
-//             ...comment,
-//             user_id: users[Math.floor(Math.random() * users.length)].id,
-//         });
-//     };
-
-//     process.exit(0);
-// };
-
-
-// seedDatabase();
 
 
