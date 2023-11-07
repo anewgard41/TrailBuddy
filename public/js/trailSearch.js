@@ -4,6 +4,13 @@ document.getElementById("searchTrailsButton").addEventListener("click", async fu
     try {
         const response = await fetch(`/api/searchTrails?q=${searchTerm}`);
         const trails = await response.json();
+
+        const searchResults = document.getElementById("searchResults");
+        trails.forEach(element => {
+            const trailEl = document.createElement("li")
+            trailEl.textContent = element.name;
+            searchResults.appendChild(trailEl);
+        });
         
         // Compile the Handlebars template
         const source = document.getElementById("trails-template").innerHTML;
