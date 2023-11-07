@@ -29,7 +29,6 @@ router.get('/', withAuth, async (req, res) => {
             ],
         });
         const user = userData.get({ plain: true });
-        console.log(userData);
         const posts = postData.map((post) => post.get({ plain: true }));
         res.render('all-post', {
             layout: 'experiences',

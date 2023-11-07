@@ -11,6 +11,12 @@ document.getElementById("searchTrailsButton").addEventListener("click", async fu
         trails.forEach(element => {
             const trailEl = document.createElement("li")
             trailEl.textContent = element.name;
+            trailEl.style.backgroundColor = "lightgreen";
+            trailEl.style.padding = "5px";
+            trailEl.style.margin = "2px";
+            trailEl.style.border = "1px solid #ccc";
+            trailEl.style.borderRadius = "5px";
+            trailEl.style.listStyle = "none"
             searchResults.appendChild(trailEl);
         });
 
