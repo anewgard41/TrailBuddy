@@ -8,13 +8,13 @@ const editFormHandler = async (event) => {
 
   // Collect values for the edited post's title and content.
   const title = document.querySelector('input[name="post-title"]').value.trim();
-  const content = document.querySelector('textarea[name="post-body"]').value.trim();
+  const content = document.querySelector('textarea[name="post-content"]').value.trim();
 
   console.log(title);
   console.log(content);
 
   // Send a PUT request to the '/api/post/:post_id' endpoint with the updated post data.
-  const response = await fetch(`/api/post/${post_id}`, {
+  const response = await fetch(`/api/posts/${post_id}`, {
     method: 'PUT',
     body: JSON.stringify({
       title,
