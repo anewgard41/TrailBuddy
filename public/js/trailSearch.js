@@ -13,13 +13,15 @@ document.getElementById("searchTrailsButton").addEventListener("click", async fu
 
         // Render the results
         const rendered = template({ trails: trails });
-        document.getElementById("searchResults").innerHTML = rendered;
+
+        // Populate the search results into the 'searchResults' div
+        document.getElementById("searchResults").innerHTML = "rendered";
 
         // Debugging logs
         console.log("Attempting to search for:", searchTerm);
         console.log("Rendered HTML:", rendered);
         console.log("API Response:", response);
-
+        
     } catch (error) {
         console.error('Error fetching and displaying trails:', error);
     }
