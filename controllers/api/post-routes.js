@@ -20,7 +20,6 @@ router.post('/', withAuth, async (req, res) => {
 
 // PUT method to update a post or experience by its id.
 router.put('/:id', withAuth, async (req, res) => {
-    debugger;
     try {
         const postData = await Post.update(req.body, {
             where: {
