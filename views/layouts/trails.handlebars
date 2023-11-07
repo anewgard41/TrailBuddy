@@ -98,13 +98,12 @@
       {{{body}}} <!-- This is where dynamic content is inserted -->
     </div>
   </main>
-  <script id="trails-template" type="text/x-handlebars-template">
+  <script type="text/x-handlebars-template" id="trails-template">
+    
     <ul>
         {{#each trails}}
             <li>
-                <strong>Name:</strong> {{this.name}} <br>
-                <strong>Location:</strong> Latitude: {{this.geo_point_2d.lat}}, Longitude: {{this.geo_point_2d.lon}} <br>
-                <strong>Surface Type:</strong> {{this.surftype}}
+                <strong>Name:</strong> {{this.name}}
             </li>
         {{/each}}
     </ul>

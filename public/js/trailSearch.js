@@ -4,24 +4,27 @@ document.getElementById("searchTrailsButton").addEventListener("click", async fu
     try {
         const response = await fetch(`/api/searchTrails?q=${searchTerm}`);
         const trails = await response.json(); 
-
+        
         console.log("API Data:", trails);
 
         // Compile the Handlebars template
         const source = document.getElementById("trails-template").innerHTML;
         const template = Handlebars.compile(source);
-
+        console.log(template);
         // Render the results
+        console.log("logs the trails : trails", { trails: trails });
         const rendered = template({ trails: trails });
-
+        console.log("rendered before DOM insert", rendered)
         // Populate the search results into the 'searchResults' div
-        document.getElementById("searchResults").innerHTML = "rendered";
+        document.getElementById("searchResults").innerHTML = rendered;
 
         // Debugging logs
         console.log("Attempting to search for:", searchTerm);
         console.log("Rendered HTML:", rendered);
         console.log("API Response:", response);
         
+        
+
     } catch (error) {
         console.error('Error fetching and displaying trails:', error);
     }

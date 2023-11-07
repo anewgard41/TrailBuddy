@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const API_ENDPOINT = 'https://data.townofcary.org/api/explore/v2.1/catalog/datasets/greenway-trails/records?limit=20';  
+const API_ENDPOINT = 'https://data.townofcary.org/api/explore/v2.1/catalog/datasets/greenway-trails/records?where=%22existing%22&limit=20';  
 
 const searchTrails = async (query, pageNumber = 1) => {
     try {
