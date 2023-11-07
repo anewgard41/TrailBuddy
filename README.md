@@ -112,5 +112,5 @@ Email: <br>
 GitHub Page: [Andres Newgard](https://github.com/anewgard41)<br>
 
 <b>Josiah Smith</b><br>
-Email: <br>
+Email: josiahsmith1359@gmail.com<br>
 GitHub: [Josiah Smith](https://github.com/jssmith73)<br>
