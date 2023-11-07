@@ -93,20 +93,27 @@
   <main class="col-auto">
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
       <!-- Search results template -->
-      <script id="trails-template" type="text/x-handlebars-template">
-          <ul>
-              {{#each trails}}
-              <li>{{trail_name}} - {{trail_location}}</li>
-              {{/each}}
-          </ul>
-      </script>
 
       <!-- Place to display search results -->
-      <div id="searchResults"></div>
+      <div>
+        <ul id="searchResults">
+
+        </ul>
+      </div>
 
       {{{body}}} <!-- This is where dynamic content is inserted -->
     </div>
   </main>
+  <script type="text/x-handlebars-template" id="trails-template">
+    
+    <ul>
+        {{#each trails}}
+            <li>
+                <strong>Name:</strong> {{this.name}}
+            </li>
+        {{/each}}
+    </ul>
+</script>
 </body>
 <!-- Footer section -->
 <footer id="footer" class="bg-gray-800 text-center lg:text-left">
