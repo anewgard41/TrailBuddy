@@ -20,7 +20,9 @@
         <!-- Logo and menu for larger screens -->
         <div class="flex items-center">
           <!-- Logo -->
+          <a href="/" class="cursor-pointer">
           <img class="mx-auto h-10 w-auto" src="/images/trailbuddy-no-text.png" alt="TrailBuddy Logo">
+          </a>
           <!-- Menu items for larger screens -->
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
@@ -78,11 +80,16 @@
       <h1 class="text-3xl font-bold text-white">TrailBuddy 2023</h1>
     </div>
   </header>
+  <section>
+    <div class="additional-content">
+      <img class="mx-auto h-auto w-auto" src="/images/trailbuddy-logo.png" alt="TrailBuddy Logo">
+    </div>
+  </section>
+
   <!-- Main content area -->
   <main class="col-auto">
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
       {{{body}}} <!-- This is where dynamic content is inserted -->
-      <img class="mx-auto h-auto w-auto" src="/images/trailbuddy-logo.png" alt="TrailBuddy Logo">
     </div>
   </main>
 </body>

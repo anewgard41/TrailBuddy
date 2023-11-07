@@ -14,27 +14,33 @@
             <div class="grid grid-cols-3 gap-6">
               <div class="col-span-3 sm:col-span-2">
                 <!-- Title Input -->
-                <label for="company-website" class="block text-sm font-medium text-gray-700"> Trail Hiked </label>
+                <label for="trail-hiked" class="block text-sm font-medium text-gray-700"> Trail Hiked </label>
                 <div class="mt-1 flex rounded-md shadow-sm">
                   <!-- Title Input Field -->
-                  <input type="text" name="post-title" id="company-website" class="form-input appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm" value="{{post.title}}" placeholder="Title">
+                  <input type="text" name="post-title" id="trail-hiked" class="form-input appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm" value="{{post.title}}" placeholder="Title">
                 </div>
               </div>
             </div>
-
             <div>
               <!-- Description Textarea -->
               <label for="about" class="block text-sm font-medium text-gray-700"> Share Your Trail Experience </label>
               <div class="mt-1">
                 <!-- Description Textarea Field -->
-                <textarea id="about" name="post-body" data-number="8" rows="3" class="form-textarea form-input appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm" placeholder="Description">{{post.content}}</textarea>
+                <textarea id="about" name="post-content" data-number="8" rows="3" class="form-textarea form-input appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-300 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm" placeholder="Description">{{post.content}}</textarea>
               </div>
-              <p class="mt-2 text-sm text-gray-500"> Brief description of your experience. </p>
+            </div>
+            <!-- Cloudinary Image Upload -->
+            <div class="mt-5">
+              <!-- Image Upload Label -->
+              <label for="image-upload" class="block text-sm font-medium text-gray-700">Upload Image</label>
+              <div class="mt-1 flex items-center">
+                <input type="file" id="image-upload" name="image" accept="image/*" class="form-input">
+              </div>
             </div>
           </div>
           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">            
             <!-- Delete Button -->
-            <button class="inline-flex justify-center py-1 px-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" type="click" id="delete-btn">Delete</button>
+            <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" type="click" id="delete-btn">Delete</button>
             <!-- Submit Button -->
             <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Done</button>
             <!-- Hidden Input for Post ID -->

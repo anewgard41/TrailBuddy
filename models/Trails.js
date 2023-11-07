@@ -33,7 +33,11 @@ Trails.init(
         }
     },
     {
-        sequelize
+        sequelize,
+        timestamps: false,
+        freezeTableName: false,
+        underscored: true,
+        modelName: 'trails',
     }
 );
 

@@ -28,21 +28,13 @@ router.get('/', async (req, res) => {
             const posts = postData.map((post) => post.get({ plain: true }));
        
         res.render('homepage'
-            ,{ layout : "main" });
+            ,{ layout : "main" , posts });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-// GET method used to retrieve homepage with the layout main.
-// router.get('/', async (req, res) => {
-//     try {
-//         res.render("homepage", { layout: "main" });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
+// Get a single post by id, including the post creator's username and the comments associated with the post.
 router.get('/post/:id', withAuth, async (req, res) => {
     try {
       //const pageTitle = 'Posts';
