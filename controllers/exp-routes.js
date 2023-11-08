@@ -23,9 +23,8 @@ router.get('/', async (req, res) => {
                     },
                 },
             ],
-            order: [['date_created', 'DESC']],
-        }); 
-        
+        });
+        const user = userData.get({ plain: true });
         const posts = postData.map((post) => post.get({ plain: true }));
 
        console.log(posts);
@@ -63,10 +62,6 @@ router.get('/edit/:id', async (req, res) => {
             ],
         });
         
-<<<<<<< HEAD
-        const post = postData.get({ plain: true });
-        res.render("editItem", { layout: "experiences", post });
-=======
         if (postData) {
             const post = postData.get({ plain: true });
             res.render('edit-posts', {
@@ -76,7 +71,6 @@ router.get('/edit/:id', async (req, res) => {
         } else {
             res.status(404).end();
         }
->>>>>>> 07313c2514164cd21bd52687172cfcac15a0073f
     } catch (err) {
         res.status(500).json(err);
     }

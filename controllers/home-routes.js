@@ -3,7 +3,7 @@ const { Post, User, Comment } = require('../models');
 const { Trails } = require('../models');
 const { Op } = require('sequelize');
 const withAuth = require('../utilities/authenticate.js');
-
+const trailService = require('../utilities/trailService');
 // Get posts for homepage, including the post creator's username and the comments associated with the post.
 router.get('/', async (req, res) => {
     try {
@@ -28,23 +28,14 @@ router.get('/', async (req, res) => {
             const posts = postData.map((post) => post.get({ plain: true }));
        
         res.render('homepage'
-            ,{ layout : "main" });
+            ,{ layout : "main" , posts });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-// GET method used to retrieve homepage with the layout main.
-// router.get('/', async (req, res) => {
-//     try {
-//         res.render("homepage", { layout: "main" });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
-// Define a route that handles GET requests for viewing a specific post
-router.get('/post/:id', async (req, res) => {
+// Get a single post by id, including the post creator's username and the comments associated with the post.
+router.get('/post/:id', withAuth, async (req, res) => {
     try {
       // Retrieve the post with the specified ID, including associated users and comments
       const postData = await Post.findOne({
@@ -98,21 +89,17 @@ router.get('/signup', async (req, res) => {
     res.render('signup');
 });
 
+
 router.get('/api/searchTrails', async (req, res) => {
-    try {
-        const searchTerm = req.query.q;
-        const trails = await Trails.findAll({
-            where: {
-                trail_name: {
-                    [Op.like]: `%${searchTerm}%`  // This will search for trails that have names like the search term
-                }
-            }
-        });
-        res.json(trails);
-    } catch (error) {
-        console.error("Error in /api/searchTrails:", error);  // Add this line
-        res.status(500).json(error);
-    }
+  try {
+      const searchTerm = req.query.q;
+      const trails = await trailService.searchTrails(searchTerm);
+      res.json(trails);
+  } catch (error) {
+      console.error("Error in /api/searchTrails:", error);
+      res.status(500).json(error);
+  }
 });
 
 module.exports = router;
+

@@ -3,6 +3,8 @@ const cloudName = 'dosbwvhog';
 const apiKey = '789987628956638';
 const apiSecret = 'c9uK-t1lXZGmBBCOp5VHA6z8zYs';
 
+// const router = require('express').Router();
+
 // Our Cloudinary upload preset
 const uploadPreset = 'our_upload_preset';
 
@@ -35,3 +37,5 @@ fileInput.addEventListener('change', (event) => {
       });
   }
 });
+
+// module.exports = router;
