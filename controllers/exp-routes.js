@@ -3,11 +3,11 @@ const { User, Post, Comment } = require("../models");
 const withAuth = require('../utilities/authenticate.js');
 
 // Get all posts or experiences for the logged in user with associated comments. 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         console.log(req.session.user_id);
         const postData = await Post.findAll({
-            where : {
+            where: {
                 user_id: req.session.user_id
             },
             include: [
