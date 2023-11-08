@@ -9,8 +9,10 @@ document.getElementById("searchTrailsButton").addEventListener("click", async fu
         
         const searchResults = document.getElementById("searchResults")
         trails.forEach(element => {
+            // Create a new <li> element for each trail and append it to the search results <ul>. 
             const trailEl = document.createElement("li")
             trailEl.textContent = element.name;
+            // apply some styles to the <li> element.
             trailEl.style.backgroundColor = "lightgreen";
             trailEl.style.padding = "5px";
             trailEl.style.margin = "2px";
