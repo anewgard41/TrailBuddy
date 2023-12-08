@@ -16,14 +16,14 @@ const loginFormHandler = async (event) => {
         }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
+      const alertbox = document.querySelector('.alert')
       // Check if the response from the server is successful (HTTP status code 200).
       if (response.ok) {
         // If the login is successful, redirect the browser to the user's profile page.
         document.location.replace('/experiences');
       } else {
         // If the login is unsuccessful, show an alert indicating that the user does not exist.
-        alert('User does not exist!');
+        alertbox.style.display = 'block'
       }
     }
   };
