@@ -2,7 +2,6 @@
 const newFormHandler = async (event) => {
     // Prevent the default form submission behavior to handle it with JavaScript.
     event.preventDefault();
-  
     // Collect values from the new post form
     const title = document.querySelector('input[name="post-title"]').value.trim();
     const content = document.querySelector('textarea[name="post-content"]').value.trim();

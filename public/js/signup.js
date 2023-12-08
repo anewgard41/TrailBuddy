@@ -1,5 +1,6 @@
 // Define an asynchronous function called 'signupFormHandler' to handle the submission of the signup form.
 const signupFormHandler = async (event) => {
+  debugger;
   // Prevent the default form submission behavior to handle it with JavaScript.
   event.preventDefault();
 
@@ -17,14 +18,14 @@ const signupFormHandler = async (event) => {
       }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+    const alertbox = document.querySelector('.alert')
     // Check if the response from the server is successful (HTTP status code 200).
     if (response.ok) {
       // If the user signup is successful, redirect the browser to the user's experiences page.
       document.location.replace('/experiences');
     } else {
       // If there's an error in user signup, show an alert with the error message.
-      alert(response.statusText);
+      alertbox.style.display = 'block'   
     }
   }
 };
@@ -32,4 +33,4 @@ const signupFormHandler = async (event) => {
 // Add a submit event listener to the signup form to trigger the 'signupFormHandler' function.
 document
   .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);  
+  .addEventListener('submit', signupFormHandler);
