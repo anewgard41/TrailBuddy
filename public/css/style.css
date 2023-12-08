@@ -155,7 +155,11 @@ summary {
 .green-list {
   list-style-type: decimal; /* You can change the bullet style here */
   color: #004d2a; /* Green text color */
-  
+  text-wrap: normal; /* Prevent long text from breaking the list */
+}
+
+.green-list {
+  list-style-position: inside;
 }
 
 /* Reset margin for various elements */
