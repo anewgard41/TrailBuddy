@@ -160,6 +160,9 @@ summary {
 
 .green-list {
   list-style-position: inside;
+  font-weight: bold; /* Bold font weight */
+  padding: 5px; /* Add some padding */
+  font-size: larger; /* Increase the font size */
 }
 
 /* Reset margin for various elements */

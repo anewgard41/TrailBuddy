@@ -3,6 +3,7 @@ const post_id = document.querySelector('input[name="post-id"]').value.trim();
 
 // Define an asynchronous function called 'editFormHandler' to handle the submission of an edited post.
 const editFormHandler = async (event) => {
+  debugger;
   // Prevent the default form submission behavior to handle it with JavaScript.
   event.preventDefault();
 

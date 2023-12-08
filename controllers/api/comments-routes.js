@@ -8,8 +8,6 @@ router.get('/', async (req, res) => {
       // serialize the data
       const comments = commentData.get({ plain: true });
   
-      console.log(comments);
-  
       res.json(comments);
     } catch(err) {
       res.status(500).json(err);

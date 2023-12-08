@@ -93,13 +93,16 @@ router.get('/signup', async (req, res) => {
 router.get('/api/searchTrails', async (req, res) => {
   try {
       const searchTerm = req.query.q;
+      console.log(`Searching trails with term: ${searchTerm}`);
       const trails = await trailService.searchTrails(searchTerm);
+      console.log(`Found trails:`, trails);
       res.json(trails);
   } catch (error) {
       console.error("Error in /api/searchTrails:", error);
-      res.status(500).json(error);
+      res.status(500).send('An internal server error occurred');
   }
 });
+
 
 module.exports = router;
 
